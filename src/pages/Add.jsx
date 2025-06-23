@@ -40,7 +40,7 @@ const Add = ({ token }) => {
       return;
     }
 
-    console.log("Selected images:", images.filter(img => img !== null));
+    // console.log("Selected images:", images.filter(img => img !== null));
     try {
       const formData = new FormData();
       
@@ -51,13 +51,13 @@ const Add = ({ token }) => {
       formData.append("mrp", mrp);
       formData.append("category", category);
       formData.append("subCategory", subCategory);
-      formData.append("bestSeller", bestseller);
+      formData.append("bestseller",bestseller);
       formData.append("sizes", JSON.stringify(sizes));
 
       // Append images that exist (using the same field name "images")
     images.forEach((image, index) => {
       if (image) {
-        console.log(`Appending image ${index}:`, image.name, image.size, image.type);
+        // console.log(`Appending image ${index}:`, image.name, image.size, image.type);
         formData.append("images", image);
       }
     });
